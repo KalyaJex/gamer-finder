@@ -9,7 +9,10 @@
     "test": "ng test",
     "format": "prettier --write .",
     "lint": "npx eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix"
+    "lint:fix": "npx eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "create:c": "ng g c --skip-tests",
+    "create:d": "ng g d --skip-tests",
+    "create:s": "ng g s --skip-tests"
   },
   "private": true,
   "dependencies": {
