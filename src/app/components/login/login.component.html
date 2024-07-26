@@ -1,0 +1,21 @@
+<div class="login-page">
+    <div class="login-panel">
+      <img src="pad.svg" alt="a magic hat">
+      <h1>Gamer Finder</h1>
+      <h2>Login</h2>
+      <form [formGroup]="form">
+        <div class="input-container">
+          <label for="username">Username</label>
+          <input type="text" id="username" name="username" formControlName="username" required>
+          <span class="required">Username required</span>
+        </div>
+        <div class="input-container">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" formControlName="password" required>
+          <span class="required">Password required</span>
+        </div>
+        <button type="submit">Sign In</button>
+      </form>
+    </div>
+    <div class="side-panel"></div>
+</div>
