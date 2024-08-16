@@ -1,0 +1,23 @@
+
+<div class="dashboard"> 
+  <header>
+    <div class="profile" #menuButton (click)="handleMenuOpened()">
+      <app-profile-icon class="profile-picture" />
+    </div>
+    <h3>Gamer Finder</h3>
+    <div (click)="handleNotificationClick()">
+      <app-notification-icon />
+    </div>
+  </header>
+  <main>
+    @for (user of users; track $index) {
+      <div class="user-card">
+        <img [src]="user.imgLink" [alt]="user.username">
+      </div>
+    }
+  </main>
+  <app-sidebar [isOpen]="isMenuOpen" (oncloseMenu)="handleMenuClosed($event)" />
+  <div>
+    <p>dashboard works!</p>
+  </div>
+</div>

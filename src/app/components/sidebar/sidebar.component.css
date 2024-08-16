@@ -1,0 +1,53 @@
+.sidebar {
+  height: 100%; /* Full height */
+  width: 0; /* Initial width is 0 */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  top: 0;
+  left: 0;
+  background-color: #444444; /* Black background */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /* Transition effect for opening/closing */
+  padding-top: 20px; /* Padding from the top */
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar .profile-picture {
+  margin-left: 10px;
+  color: #0f0 !important;
+  width: 4rem;
+}
+
+.sidebar .username {
+  margin-left: 20px;
+  color: #0f0;
+}
+
+.sidebar .separation {
+  margin-top: 5px;
+  height: 2px;
+  width: 100%;
+  background: #0f0
+}
+
+.sidebar .menu {
+  margin: 20px;
+}
+
+.sidebar .menu ul li {
+  list-style-type: none;
+}
+
+.sidebar .menu ul li a {
+  color: #0f0;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.sidebar .menu ul li a .user-icon {
+
+}

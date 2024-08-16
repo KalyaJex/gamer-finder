@@ -1,40 +1,74 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  FormsModule,
+  NgForm,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../_services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule, ReactiveFormsModule],
+  imports: [FormsModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  form:FormGroup;
+  private activatedRoute = inject(ActivatedRoute);
+  signinForm: FormGroup;
+  signupForm: FormGroup;
+  isSignupShown = signal(false);
 
-  constructor(private fb:FormBuilder, 
-              private authService: AuthService, 
-              private router: Router) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private authService: AuthService,
+    private router: Router,
+  ) {
+    this.signinForm = this.formBuilder.group({
+      signinEmail: ['', Validators.required],
+      signinPassword: ['', Validators.required],
+    });
 
-    this.form = this.fb.group({
-      email: ['',Validators.required],
-      password: ['',Validators.required]
+    this.signupForm = this.formBuilder.group({
+      signupUsername: ['', [Validators.required]],
+      signupEmail: ['', [Validators.required, Validators.email]],
+      signupPassword: ['', [Validators.required]],
+      signupConfirmPassword: ['', Validators.required],
     });
   }
 
-  login() {
-    const val = this.form.value;
+  onClickSignup(e: MouseEvent) {
+    e.preventDefault();
+    this.isSignupShown.set(true);
+  }
 
-    if (val.email && val.password) {
-        this.authService.login(val.email, val.password)
-            .subscribe(
-                () => {
-                    console.log("User is logged in");
-                    this.router.navigateByUrl('/');
-                }
-            );
-    }
-}
+  onClickBack(e: MouseEvent) {
+    e.preventDefault();
+    this.isSignupShown.set(false);
+  }
 
+  onSignin() {
+    console.log(this.signinForm.value);
+    this.authService
+      .login(
+        this.signinForm.value.signinEmail,
+        this.signinForm.value.signinPassword,
+      )
+      .subscribe(() => {
+        console.log('test');
+        this.router.navigate(['./dashboard'], {
+          relativeTo: this.activatedRoute,
+        });
+      });
+  }
+
+  onSignup() {
+    console.log(this.signupForm.value);
+    console.log(this.signupForm.get('signupUsername')?.invalid);
+  }
 }

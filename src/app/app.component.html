@@ -1,1 +1,15 @@
-<router-outlet />
+<section>
+  @for(span of spans; track span) {
+    <span></span>
+  }
+  
+</section> <!-- partial --> 
+<div class="container">
+  @if (isLoading) {
+    <app-loader />
+  }
+
+  @if (!isLoading) {
+    <router-outlet />
+  }
+</div>
