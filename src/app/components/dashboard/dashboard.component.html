@@ -2,11 +2,16 @@
 <div class="dashboard"> 
   <header>
     <div class="profile" #menuButton (click)="handleMenuOpened()">
-      <app-profile-icon class="profile-picture" />
+      <mat-icon aria-hidden="false" aria-label="app menu" fontIcon="menu" class="icon"></mat-icon>
     </div>
     <h3>Gamer Finder</h3>
-    <div (click)="handleNotificationClick()">
-      <app-notification-icon />
+    <div class="notification" (click)="handleNotificationClick()">
+      @if (hasNewNotification) {
+        <mat-icon aria-hidden="false" aria-label="has a new notification" fontIcon="notifications_active" class="icon"></mat-icon>
+      }
+      @if (!hasNewNotification) {
+        <mat-icon aria-hidden="false" aria-label="no new notification" fontIcon="notifications_none" class="icon"></mat-icon>
+      }
     </div>
   </header>
   <main>

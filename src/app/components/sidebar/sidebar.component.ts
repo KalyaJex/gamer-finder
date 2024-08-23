@@ -5,19 +5,22 @@ import {
   input,
   output,
 } from '@angular/core';
-import { ProfileIconComponent } from "../svg/profile-icon/profile-icon.component";
-import { UserIconComponent } from "../svg/user-icon/user-icon.component";
+import { ProfileIconComponent } from '../svg/profile-icon/profile-icon.component';
+import { UserIconComponent } from '../svg/user-icon/user-icon.component';
+import { Router } from '@angular/router';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'app-sidebar',
   standalone: true,
-  imports: [ProfileIconComponent, UserIconComponent],
+  imports: [ProfileIconComponent, UserIconComponent, MatIconModule],
   templateUrl: './sidebar.component.html',
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
   isOpen = input.required<boolean>();
   oncloseMenu = output<boolean>();
+  userProfilePicture = 'dummy-profile-pic.png';
 
   // fetch user profile
 
@@ -28,5 +31,12 @@ export class SidebarComponent {
     }
   }
 
-  constructor(private eRef: ElementRef) {}
+  constructor(
+    private eRef: ElementRef,
+    private router: Router,
+  ) {}
+
+  onClickProfile() {
+    this.router.navigate(['profile']);
+  }
 }

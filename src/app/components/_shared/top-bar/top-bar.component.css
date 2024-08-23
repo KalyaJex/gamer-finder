@@ -1,0 +1,29 @@
+.top-bar {
+  height: 2rem;
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.75rem;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  align-items: center;
+  width: auto;
+}
+
+
+.left-group {
+  display: flex;
+  align-items: center;
+  gap: 30vw; /* Space between the icon and the label */
+}
+
+h2,
+.icon {
+  color: #0f0;
+}
+
+.icon {
+  transform: scale(2);
+}

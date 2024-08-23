@@ -13,3 +13,26 @@ body
   min-height: 100vh;
   background: #000;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.full-width {
+  width: 100%;
+}
+
+.horizontal {
+  display: flex;
+}
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}
+
+.center {
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+<div class="top-bar">
+  <div class="left-group">
+    <mat-icon (click)="onClickNavigateBack()" aria-hidden="false" aria-label="back navigation" fontIcon="arrow_back" class="icon" ></mat-icon>
+    @if (title()) {
+      <h2>{{title()}}</h2>
+    }
+  </div>
+  @if (dropdownMenu()) {
+    <!-- <div class="dot-menu" mat-button [matMenuTriggerFor]="menu">
+      <mat-icon aria-hidden="false" aria-label="menu" fontIcon="keyboard_control" class="icon"></mat-icon>
+    </div> -->
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon class="dot-menu" aria-hidden="false" aria-label="menu" fontIcon="keyboard_control" class="icon"></mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      @for (item of dropdownMenu(); track $index) {
+        <button (click)="item.fn()" mat-menu-item>{{ item.label }}</button>
+      }
+    </mat-menu>
+  }
+</div>

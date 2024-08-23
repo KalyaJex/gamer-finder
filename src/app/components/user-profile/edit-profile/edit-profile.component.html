@@ -1,0 +1,40 @@
+<div class="background">
+  <app-top-bar title="My Profile" />
+  <div class="edit-profile">
+    <mat-card appearance="outlined">
+      <mat-card-content (click)="openDialog()">
+        <div class="box">
+          <div class="left-group">
+            <mat-icon aria-hidden="false" aria-label="username icon" fontIcon="person" class="icon"></mat-icon>
+            <div class="field">
+              <h3>User name</h3>
+              <p>{{username}}</p>
+            </div>
+          </div>
+        </div>
+      </mat-card-content>
+      <div class="separation"></div>
+      <mat-card-content>
+        <div class="box">
+          <div class="left-group">
+            <mat-icon aria-hidden="false" aria-label="bio icon" fontIcon="menu_book" class="icon"></mat-icon>
+            <h3 class="label">Bio</h3>
+          </div>
+          <mat-icon aria-hidden="false" aria-label="button to edit bio" fontIcon="keyboard_arrow_right" class="icon"></mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+    <br>
+    <mat-card appearance="outlined">
+      <mat-card-content>
+        <div class="box">
+          <div class="left-group">
+            <mat-icon aria-hidden="false" aria-label="game library icon" fontIcon="video_library" class="icon"></mat-icon>
+            <h3 class="label">Game Library</h3>
+          </div>
+          <mat-icon aria-hidden="false" aria-label="button to edit game library" fontIcon="keyboard_arrow_right" class="icon"></mat-icon>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

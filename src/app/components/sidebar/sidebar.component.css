@@ -15,10 +15,10 @@
   width: 250px;
 }
 
-.sidebar .profile-picture {
-  margin-left: 10px;
-  color: #0f0 !important;
+.sidebar .profile-picture img {
+  margin-left: 20px;
   width: 4rem;
+  border-radius: 100%;
 }
 
 .sidebar .username {
@@ -39,12 +39,13 @@
 
 .sidebar .menu ul li {
   list-style-type: none;
+  margin-bottom: 0.5rem;
 }
 
 .sidebar .menu ul li a {
   color: #0f0;
   display: flex;
-  align-items: baseline;
+  align-items: flex-end;
   gap: 0.5rem;
 }
 

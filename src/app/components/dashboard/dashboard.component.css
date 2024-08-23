@@ -1,27 +1,10 @@
-.container {
-  position: absolute;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2px;
-  flex-wrap: wrap;
-  overflow: hidden;
-}
-
 .dashboard {
-  /* position: absolute; */
-  /* width: 400px; */
-  width: 22rem;
+  width: 100vw;
   background: #222;  
   z-index: 1000;
   display: flex;
-  /* justify-content: center; */
   align-items: center;
   flex-direction: column;
-  /* padding: 0.5rem; */
-  /* border-radius: 4px; */
   box-shadow: 0 15px 35px rgba(0,0,0,9);
   height: 100vh;
 }
@@ -36,9 +19,12 @@ header {
   align-items: center;
 }
 
-header .profile .profile-picture {
-  color: #0f0 !important;
-  width: 4rem;
+header .profile {
+  padding-left: 0.5rem;
+}
+
+header .notification {
+  padding-right: 0.5rem;
 }
 
 
@@ -68,94 +54,9 @@ main .user-card img {
   height: 100%;
   border-radius: 8px;
   object-fit: cover;
-  /* max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto; */
 }
 
-
-/* .sidebar {
-  height: 100%; 
-  width: 0; 
-  position: fixed; 
-  z-index: 1; 
-  top: 0;
-  left: 0;
-  background-color: #111; 
-  overflow-x: hidden;
-  transition: 0.5s; 
-  padding-top: 60px; 
+.icon {
+  color: #0f0;
+  transform: scale(1.25)
 }
-
-.sidebar.open {
-  width: 250px;
-}
-
-.sidebar-closed {
-  position: absolute;
-  top: 50%;
-  right: -30px;
-  background: #fff;
-  height: 60px;
-  width: 60px;
-  border-radius: 50%;
-  box-shadow: 0 0 20px 20px rgba(0,0,0,0.03);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translatex(-100%);
-  cursor: pointer;
-  transition: transform 0.4s ease-in-out 0.2s;
-}
-
-.sidebar-closed::before,
-.sidebar-closed::after {
-  content: "";
-  height: 2px;
-  background: #898989;
-  width: 24px;
-  display: block;
-  position: absolute;
-}
-
-.sidebar-closed::after {
-  transform:  rotate(90deg);
-}
-
-.sidebar-menu {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  justify-content: space-around;
-  font-size: 36px;
-  margin-top: 80px;
-  margin-bottom: 80px;
-  color: #898989;
-}
-
-.sidebar-menu a {
-  color: currentcolor;
-  text-decoration: none;
-  transform: translatex(-80%);
-  transition: transform 0.4s ease-in-out;
-}
-
-.sidebar-menu a::before {
-  content: "";
-  height: 2px;
-  background: #898989;
-  width: 120px;
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  transform: translatex(-50%);
-  opacity: 0;
-  transition: transform 0.4s ease-in-out, opacity 0.4s linear;
-}
-
-.sidebar-menu a::before:hover::before {
-  transform: translatex(0);
-  opacity: 1;
-}
- */

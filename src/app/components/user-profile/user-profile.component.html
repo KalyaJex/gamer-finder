@@ -1,1 +1,24 @@
-<p>user-profile works!</p>
+<div class="user-profile">
+  <header class="vertical">
+    <!-- <div class="horizontal full-width top-header">
+      <div class="navigate-back" (click)="onClickNavigateBack()">
+        <mat-icon aria-hidden="false" aria-label="back navigation" fontIcon="arrow_back" class="icon"></mat-icon>
+      </div>
+      <div class="dot-menu">
+        <mat-icon aria-hidden="false" aria-label="menu" fontIcon="keyboard_control" class="icon"></mat-icon>
+      </div>
+    </div> -->
+    <app-top-bar [dropdownMenu]="testMenu" />
+    <div class="horizontal bottom-header">
+      <img src="{{userProfilePicture}}" alt="profile image">
+      <div class="vertical center">
+        <h2 class="username">{{username}}</h2>
+        <button (click)="onClickNavigateEditProfile()" class="edit-profile">Edit Profile</button>
+      </div>
+    </div>
+  </header>
+  <div class="horizontal center bio">
+    <p>{{userBio}}</p> 
+  </div>
+  <div class="separation"></div>
+</div>
